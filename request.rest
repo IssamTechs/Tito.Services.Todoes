@@ -1,0 +1,46 @@
+@api = https://localhost:5001
+@todoId = 2374F855-D533-4A91-ADBA-2FF98C1AEC21
+
+# ============== TODO ==================== #
+
+
+### GET ALL TODO
+GET {{api}}/api/Todoes
+ 
+
+### GET ALL TODO with filter
+GET {{api}}/api/Todoes?page=1&pageSize=10
+
+### POST TODO
+POST {{api}}/api/Todoes
+Content-Type: application/json
+
+{
+  "title": "Todo #1 title",
+  "description": "Todo #1 description",
+  "priority": "low"
+}
+
+### GET TODO
+GET {{api}}/api/Todoes/{{todoId}}
+
+
+### PUT Todo
+PUT {{api}}/api/Todoes
+Content-Type: application/json
+
+{
+  "id": "{{todoId}}",
+  "title": "Todo #1 title - upodated",
+  "description": "Todo #1 description - updated",
+  "priority": "medium",
+  "state": "INPROCESS"
+}
+
+### DE:ETE Todo
+DELETE {{api}}/api/Todoes
+Content-Type: application/json
+
+{
+  "todoId": "{{todoId}}"
+}
